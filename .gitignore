@@ -1,0 +1,12 @@
+.env
+secrets/*.json
+!secrets/*.example
+backend/data/
+*.db
+*.db-*
+__pycache__/
+.pytest_cache/
+frontend/node_modules/
+frontend/.next/
+frontend/next-env.d.ts
+frontend/tsconfig.tsbuildinfo

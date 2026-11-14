@@ -1,0 +1,51 @@
+# Despliegue local. Sólo el panel se publica, y sólo en 127.0.0.1 (no expongas esto a Internet).
+services:
+  api:
+    build: ./backend
+    env_file: .env
+    environment:
+      DATABASE_URL: sqlite:////srv/data/copytrader.db
+      COINBASE_API_KEY_FILE: /run/secrets/cdp_api_key
+    volumes:
+      - data:/srv/data
+    secrets:
+      - cdp_api_key
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request;urllib.request.urlopen('http://localhost:8000/api/health')"]
+      interval: 30s
+
+  worker:
+    build: ./backend
+    command: ["python", "-m", "app.worker"]
+    env_file: .env
+    environment:
+      DATABASE_URL: sqlite:////srv/data/copytrader.db
+      COINBASE_API_KEY_FILE: /run/secrets/cdp_api_key
+    volumes:
+      - data:/srv/data
+    secrets:
+      - cdp_api_key
+    restart: unless-stopped
+    depends_on:
+      - api
+
+  frontend:
+    build:
+      context: ./frontend
+      args:
+        BACKEND_URL: http://api:8000
+    ports:
+      - "127.0.0.1:3000:3000"
+    restart: unless-stopped
+    depends_on:
+      - api
+
+volumes:
+  data:
+
+secrets:
+  cdp_api_key:
+    # JSON descargado de CDP ({"name": "...", "privateKey": "..."}). Si no tienes claves todavía,
+    # deja el fichero de ejemplo vacío ({}): el sistema funcionará con datos públicos y en simulación.
+    file: ./secrets/cdp_api_key.json
