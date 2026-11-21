@@ -1,4 +1,7 @@
 {
+  "enabledPlugins": {
+    "ecc@ecc": true
+  },
   "extraKnownMarketplaces": {
     "ecc": {
       "source": {
@@ -6,8 +9,5 @@
         "url": "https://github.com/affaan-m/ECC.git"
       }
     }
-  },
-  "enabledPlugins": {
-    "ecc@ecc": true
   }
 }
