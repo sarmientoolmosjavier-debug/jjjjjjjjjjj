@@ -9,7 +9,7 @@ This kit is everything you need to start selling **verified** supplier contact l
 | File | What it is |
 |---|---|
 | `01-business-plan.md` | Niche, offer, pricing, costs, 30-day launch plan |
-| `02-supplier-leads.csv` | 15 starting leads (heavyweight streetwear / blanks + branding), status "unverified" |
+| `02-supplier-leads.csv` | 68 leads across 15 niches (streetwear, footwear, activewear, jewelry, bags, skincare, hats, packaging, phone accessories, socks, pet, eyewear, drinkware, swimwear, candles, watches), status "unverified" |
 | `02-supplier-tracker.xlsx` | Same leads in a tracker with an automatic 0–100 vetting score |
 | `03-vetting-sop.md` | Step-by-step checks for each supplier before it goes in the list, plus the scoring rubric |
 | `04-outreach-messages.md` | Copy-paste messages in English + Simplified Chinese (inquiry, consent to list, referral deal, follow-ups) |
@@ -18,6 +18,7 @@ This kit is everything you need to start selling **verified** supplier contact l
 | `07-marketing-plan.md` | Where to find buyers, content ideas, posting scripts |
 | `sales-page/index.html` | Ready-to-edit sales page (open it in a browser) |
 | `08-self-critique.md` | Weak points of this plan and how the kit addresses them |
+| `09-niche-guide.md` | Which niches to sell first, bundles, compliance and replica risk per niche |
 
 ## Order of work
 
